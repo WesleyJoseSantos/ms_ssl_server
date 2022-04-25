@@ -1,0 +1,210 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2022-02-18T12:28:11.787Z",
+    "__export_source": "insomnia.desktop.app:v2021.7.2",
+    "resources": [
+        {
+            "_id": "req_5ea4939efe9842b88a6903af2cd21262",
+            "parentId": "wrk_63c9b9fd336544f8bf6e438c78f842c6",
+            "modified": 1645187245317,
+            "created": 1645181201632,
+            "url": "http://localhost:3000/openssl/cakey",
+            "name": "CAkey",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"pass\": \"hdrbroker\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_f6d4cf92e6684e8f9bd0c4600e1bcced"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1645182735632,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "wrk_63c9b9fd336544f8bf6e438c78f842c6",
+            "parentId": null,
+            "modified": 1645181188963,
+            "created": 1645181188963,
+            "name": "ssl_server",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_6e566476cb1e46efa99bb3a1db4e8f9c",
+            "parentId": "wrk_63c9b9fd336544f8bf6e438c78f842c6",
+            "modified": 1645187244725,
+            "created": 1645182735582,
+            "url": "http://localhost:3000/openssl/cacert",
+            "name": "CAcert",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"pass\": \"hdrbroker\",\n\t\"days\": 1826,\n\t\"country\": \"BR\",\n\t\"state\": \"Minas Gerais\",\n\t\"locality\": \"Entre Rios\",\n\t\"org\": \"Hedro\",\n\t\"unit\": \"Server\",\n\t\"uri\": \"Server\",\n\t\"email\": \"wesley@hedro.com.br\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_685370be35a34f34a4c8b42fc9917607"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1645182735582,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_28aad02216124d3eaabc95c5d774bc06",
+            "parentId": "wrk_63c9b9fd336544f8bf6e438c78f842c6",
+            "modified": 1645187244070,
+            "created": 1645186476690,
+            "url": "http://localhost:3000/openssl/key",
+            "name": "key",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"server\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_669c8d7a6bd0440394127323d31ff1ed"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1645182735532,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_9a2adaafad7947138306e89ac38a0e01",
+            "parentId": "wrk_63c9b9fd336544f8bf6e438c78f842c6",
+            "modified": 1645187243416,
+            "created": 1645186481961,
+            "url": "http://localhost:3000/openssl/cert",
+            "name": "cert",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"server\",\n\t\"country\": \"BR\",\n\t\"state\": \"Minas Gerais\",\n\t\"locality\": \"Entre Rios\",\n\t\"org\": \"Hedro\",\n\t\"unit\": \"Server\",\n\t\"uri\": \"Server\",\n\t\"email\": \"wesley@hedro.com.br\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_311724b0099547a3be67b01daa3e4639"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1645182735482,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_16e8a33342014c258b35122096dc16e1",
+            "parentId": "wrk_63c9b9fd336544f8bf6e438c78f842c6",
+            "modified": 1645187236695,
+            "created": 1645186492506,
+            "url": "http://localhost:3000/openssl/sign",
+            "name": "sign",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"server\",\n\t\"pass\": \"hdrbroker\",\n\t\"days\": 360\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_2bd371f44b714c77b2185a8a2ecbf96e"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1645182735432,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_446249406015b306883f054e8aa0e768c09b305e",
+            "parentId": "wrk_63c9b9fd336544f8bf6e438c78f842c6",
+            "modified": 1645181188987,
+            "created": 1645181188987,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1645181188987,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_446249406015b306883f054e8aa0e768c09b305e",
+            "parentId": "wrk_63c9b9fd336544f8bf6e438c78f842c6",
+            "modified": 1645181188991,
+            "created": 1645181188991,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_66a6db3e96af47ec8c663fe6de4c39a8",
+            "parentId": "wrk_63c9b9fd336544f8bf6e438c78f842c6",
+            "modified": 1645181188972,
+            "created": 1645181188972,
+            "fileName": "ssl_server",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        }
+    ]
+}

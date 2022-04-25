@@ -1,0 +1,2 @@
+npm install ts-node --save-dev
+npm install --save-dev tsconfig-paths
