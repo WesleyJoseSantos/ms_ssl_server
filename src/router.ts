@@ -27,6 +27,6 @@ const sslRequestUsecase = new SslRequestUsecase(sslRepository)
 const sslRequestController = new SslRequestController(sslRequestUsecase)
 
 routes.post('/v1/ssl', RouteAdapt(sslRequestController.post.bind(sslRequestController), logger))
-routes.get('/v1/ssl/:name', RouteAdapt(sslRequestController.get.bind(sslRequestController), logger))
+routes.get('/v1/ssl/:name', sslRequestController.get.bind(sslRequestController))
 
 export {routes}

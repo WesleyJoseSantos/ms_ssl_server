@@ -6,7 +6,8 @@ import { ISslRequestUsecase } from '../../business/interfaces/issl_request_useca
 import { HttpRequest, HttpResponse } from '../../infrastructure/http_server';
 import { OpenSsl } from '../../infrastructure/openssl';
 import { ControllerBase } from '../../shared/utils/controller_base';
-import { existsSync, readFileSync } from 'fs';
+import { existsSync } from 'fs';
+import { Request, Response } from 'express';
 import mime from 'mime'
 
 export class SslRequestController extends ControllerBase {
@@ -33,23 +34,15 @@ export class SslRequestController extends ControllerBase {
         return this.created({body: result.value})
     }
 
-    public async get (req: HttpRequest) : Promise<HttpResponse> {
+    public async get (req: Request, res: Response) {
         const name = req.params.name
         const path = OpenSsl.sslDir as string
         const filename = path + name
-        const mimetype = mime.lookup(filename)
 
         if(!existsSync(path + name)){
-            return this.notFound({ body: 'Requested file not founded.' })
+            res.status(404).json({ body: 'Requested file not founded.' })
         }else{
-            return this.ok(
-                { 
-                    headers: {
-                        'Content-disposition': 'attachment; filename=' + name,
-                        'Content-type': mimetype,
-                    },                    
-                    body: readFileSync(filename).toString()
-                })
+            res.status(200).download(filename)
         }
     }
 }
