@@ -1,4 +1,4 @@
-import { HttpResponse } from '@infrastructure/http_server'
+import { HttpResponse } from '../../infrastructure/http_server'
 
 type Params = {body?: any, headers?: any}
 

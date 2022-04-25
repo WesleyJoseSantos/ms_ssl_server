@@ -1,13 +1,13 @@
-import { MediaTypeError } from "@application/errors/mediatype_error";
-import { NotFoundError } from "@application/errors/notfound_error";
-import { UnauthorizedError } from "@application/errors/unauthorizederror";
-import { WrongPasswordError } from "@application/errors/worng_password_error";
-import { ISslRequestUsecase } from "@business/interfaces/issl_request_usecase";
-import { HttpRequest, HttpResponse } from "@infrastructure/http_server";
-import { OpenSsl } from "@infrastructure/openssl";
-import { ControllerBase } from "@shared/utils/controller_base";
-import { existsSync, readFileSync } from "fs";
-import mime from "mime"
+import { MediaTypeError } from '../../application/errors/mediatype_error';
+import { NotFoundError } from '../../application/errors/notfound_error';
+import { UnauthorizedError } from '../../application/errors/unauthorizederror';
+import { WrongPasswordError } from '../../application/errors/worng_password_error';
+import { ISslRequestUsecase } from '../../business/interfaces/issl_request_usecase';
+import { HttpRequest, HttpResponse } from '../../infrastructure/http_server';
+import { OpenSsl } from '../../infrastructure/openssl';
+import { ControllerBase } from '../../shared/utils/controller_base';
+import { existsSync, readFileSync } from 'fs';
+import mime from 'mime'
 
 export class SslRequestController extends ControllerBase {
     constructor(private readonly _sslRequestUsecase : ISslRequestUsecase){

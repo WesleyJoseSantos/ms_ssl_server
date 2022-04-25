@@ -1,9 +1,9 @@
-import { OpenSsl } from "@infrastructure/openssl";
-import { ISslRepository } from "../../application/interfaces/issl_repository";
-import { SslRequestDTO } from "../../business/dtos/ssl_request_dto";
-import { SslResultDTO } from "../../business/dtos/ssl_result_dto";
-import { BaseError } from "../../shared/base_error";
-import { Either, left, right } from "../../shared/either";
+import { OpenSsl } from '../../infrastructure/openssl';
+import { ISslRepository } from '../../application/interfaces/issl_repository';
+import { SslRequestDTO } from '../../business/dtos/ssl_request_dto';
+import { SslResultDTO } from '../../business/dtos/ssl_result_dto';
+import { BaseError } from '../../shared/base_error';
+import { Either, left, right } from '../../shared/either';
 
 export class SslRepository implements ISslRepository {
 

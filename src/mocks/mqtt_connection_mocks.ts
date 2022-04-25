@@ -1,4 +1,4 @@
-import { IMqttConnection } from '@application/interfaces/imqtt_connection'
+import { IMqttConnection } from 'application/interfaces/imqtt_connection'
 import { MqttClient, Store } from 'mqtt'
 
 export const mqttConn : MqttClient = {

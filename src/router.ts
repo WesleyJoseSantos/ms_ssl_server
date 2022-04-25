@@ -1,12 +1,12 @@
-import { RouteAdapt } from '@infrastructure/express.router.adapt'
-import { Logger } from '@infrastructure/logger'
+import { RouteAdapt } from './infrastructure/express.router.adapt'
+import { Logger } from './infrastructure/logger'
 import { Router } from 'express'
-import { SignInController } from '@controllers/sign_in_controller'
-import { SslRepository } from '@infrastructure/repositories/ssl_repository'
-import { SslRequestUsecase } from '@application/ssl_request_usecase'
-import { SslRequestController } from '@controllers/ssl_request_controller'
-import { ProvControllerV1 } from '@controllers/prov_controller_v1'
-import { ProvControllerV2 } from '@controllers/prov_controller_v2'
+import { SignInController } from './interfaces/controllers/sign_in_controller'
+import { SslRepository } from './infrastructure/repositories/ssl_repository'
+import { SslRequestUsecase } from './application/ssl_request_usecase'
+import { SslRequestController } from './interfaces/controllers/ssl_request_controller'
+import { ProvControllerV1 } from './interfaces/controllers/prov_controller_v1'
+import { ProvControllerV2 } from './interfaces/controllers/prov_controller_v2'
 
 const routes = Router()
 

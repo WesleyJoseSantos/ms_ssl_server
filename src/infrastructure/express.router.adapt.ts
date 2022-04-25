@@ -1,5 +1,5 @@
-import { HttpRequest, HttpResponse } from "@infrastructure/http_server"
-import { Logger } from "@infrastructure/logger"
+import { HttpRequest, HttpResponse } from '../infrastructure/http_server'
+import { Logger } from '../infrastructure/logger'
 import { Request, Response } from 'express'
 
 export const RouteAdapt = (handler: (req: HttpRequest) => Promise<HttpResponse>, logger: Logger) => {

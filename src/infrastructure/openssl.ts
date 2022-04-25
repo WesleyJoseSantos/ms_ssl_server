@@ -1,7 +1,7 @@
-import { SslRequestDTO } from "@business/dtos/ssl_request_dto";
-import { SslResultDTO } from "@business/dtos/ssl_result_dto";
-import { spawn } from "child_process";
-import { existsSync, readFileSync } from "fs";
+import { SslRequestDTO } from '../business/dtos/ssl_request_dto';
+import { SslResultDTO } from '../business/dtos/ssl_result_dto';
+import { spawn } from 'child_process';
+import { existsSync, readFileSync } from 'fs';
 
 export class OpenSsl {
     private static _caCrtPath? : string

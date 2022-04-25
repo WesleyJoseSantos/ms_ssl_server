@@ -1,4 +1,4 @@
-import { BaseError } from "@shared/base_error"
+import { BaseError } from '../../shared/base_error'
 
 export class NotFoundError extends Error implements BaseError {
   name = 'NotFoundError'

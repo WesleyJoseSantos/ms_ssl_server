@@ -1,12 +1,12 @@
-import { SslResultDTO } from "@business/dtos/ssl_result_dto";
-import { ISslRequestUsecase } from "@business/interfaces/issl_request_usecase";
-import { SslRequestDTO } from "../business/dtos/ssl_request_dto";
-import { BaseError } from "../shared/base_error";
-import { ISslRepository } from "./interfaces/issl_repository";
-import { MediaTypeError } from "./errors/mediatype_error";
-import { UnauthorizedError } from "./errors/unauthorizederror";
-import { WrongPasswordError } from "./errors/worng_password_error";
-import { Either, left, right } from "@shared/either";
+import { SslResultDTO } from '../business/dtos/ssl_result_dto';
+import { ISslRequestUsecase } from '../business/interfaces/issl_request_usecase';
+import { SslRequestDTO } from '../business/dtos/ssl_request_dto';
+import { BaseError } from '../shared/base_error';
+import { ISslRepository } from '../application/interfaces/issl_repository';
+import { MediaTypeError } from '../application/errors/mediatype_error';
+import { UnauthorizedError } from './errors/unauthorizederror';
+import { WrongPasswordError } from './errors/worng_password_error';
+import { Either, left, right } from '../shared/either';
 
 export class SslRequestUsecase implements ISslRequestUsecase {
     constructor(

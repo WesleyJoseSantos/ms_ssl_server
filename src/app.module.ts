@@ -1,8 +1,8 @@
-import { SslRequestDTO } from '@business/dtos/ssl_request_dto'
-import { Environment } from '@infrastructure/environments'
-import { HttpServer } from "@infrastructure/http_server"
-import { OpenSsl } from '@infrastructure/openssl'
-import { routes } from "./router"
+import { SslRequestDTO } from './business/dtos/ssl_request_dto'
+import { Environment } from './infrastructure/environments'
+import { HttpServer } from './infrastructure/http_server'
+import { OpenSsl } from './infrastructure/openssl'
+import { routes } from './router'
 
 /**
  * @module CompositionRoot
