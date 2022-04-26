@@ -20,10 +20,21 @@ export class OpenSsl {
     }
 
     public static async processReq(req: SslRequestDTO): Promise<SslResultDTO> {
-        if(!this.exists(req)) await this._createKey(req)
-        await this._createCsr(req)
-        await this._sign(req)
-        return this.getFiles(req)
+        if(!this.exists(req)){
+            await this._createKey(req)
+            await this._createCsr(req)
+            await this._sign(req)
+            return this.getFiles(req)
+        }else{
+            const crtFile = this.sslDir + req.name + '.crt'
+            const daysLeft = await this.daysRemaining(crtFile);
+            if(daysLeft <= 1){
+                await this._createCsr(req)
+                await this._sign(req)
+            }
+            return this.getFiles(req)
+        }
+
     }
 
     public static exists(req: SslRequestDTO) : boolean {
@@ -119,6 +130,10 @@ export class OpenSsl {
     }
 
     private static async _sign(req: SslRequestDTO): Promise<number | null> {
+        const daysLeft = await this.daysRemaining(this._caCrtPath!);
+        if(daysLeft <= 1){
+            await this._signCa(this._ca!)
+        }
         return new Promise((resolve, reject) => {
             const ls = spawn('openssl', ['x509', '-req', '-in', `${this.sslDir}${req.name}.csr`, '-CA', `${this._caCrtPath}`, '-CAkey', `${this._caKeyPath}`, '-CAcreateserial', '-out', `${this.sslDir}${req.name}.crt`, '-days', `${req.days}`, '-passin', `pass:${req.pass}`])
             ls.on('close', (code) => {
