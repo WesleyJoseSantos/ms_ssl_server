@@ -1,7 +1,7 @@
 import { SslRequestDTO } from '../business/dtos/ssl_request_dto';
 import { SslResultDTO } from '../business/dtos/ssl_result_dto';
 import { spawn } from 'child_process';
-import { existsSync, readFileSync } from 'fs';
+import { existsSync, mkdirSync, readFileSync, rmdir, rmdirSync, rmSync } from 'fs';
 
 export class OpenSsl {
     private static _caCrtPath? : string
@@ -15,6 +15,10 @@ export class OpenSsl {
         this._ca = ca
         this._caCrtPath = this.sslDir + this._ca.name + '.crt'
         this._caKeyPath = this.sslDir + this._ca.name + '.key'
+        
+        rmSync(this.sslDir!, { recursive: true })
+        mkdirSync(this.sslDir!)
+
         await this._createCa(this._ca)
         await this._signCa(this._ca)
     }
@@ -132,6 +136,8 @@ export class OpenSsl {
     private static async _sign(req: SslRequestDTO): Promise<number | null> {
         const daysLeft = await this.daysRemaining(this._caCrtPath!);
         if(daysLeft <= 1){
+            rmSync(this.sslDir!, { recursive: true })
+            mkdirSync(this.sslDir!)
             await this._signCa(this._ca!)
         }
         return new Promise((resolve, reject) => {
